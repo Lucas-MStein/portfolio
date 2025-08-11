@@ -14,8 +14,8 @@ const projects: Project[] = [
     {
         title: 'A$AP',
         description: 'Mein persönlicher Blog mit Stil.',
-        href: 'https://alwaysstriveandporsper.de',
-        hrefLabel: 'alwaysstriveandporsper.de',
+        href: 'https://alwaysstriveandprosper.de',
+        hrefLabel: 'alwaysstriveandprosper.de',
         Icon: Rocket,
     },
     {
