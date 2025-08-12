@@ -1,5 +1,21 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Tools & Technologien',
+    description:
+        'Die Tools und Technologien, mit denen Lucas-Maurice Stein tagtäglich arbeitet.',
+    alternates: { canonical: '/uses' },
+    openGraph: {
+        url: '/uses',
+        type: 'website',
+        title: 'Tools & Technologien – Lucas-Maurice Stein',
+        description:
+            'Mein Technologie-Stack: Moderne Tools für effiziente und kreative Webentwicklung.',
+        images: ['/og.png'],
+    },
+}
 
 export default function UsesPage() {
     const categories = [

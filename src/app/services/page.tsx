@@ -9,6 +9,22 @@ import {
     ArrowLeft,
     Check
 } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Leistungen',
+    description:
+        'Webentwicklung, UI/UX-Design und Performance-Optimierung – erfahren Sie, wie ich Ihren digitalen Auftritt verbessere.',
+    alternates: { canonical: '/services' },
+    openGraph: {
+        url: '/services',
+        type: 'website',
+        title: 'Leistungen – Lucas-Maurice Stein',
+        description:
+            'Individuelle Leistungen für Ihren digitalen Erfolg: Webentwicklung, Design, Optimierung.',
+        images: ['/og.png'],
+    },
+}
 
 type Service = {
     title: string

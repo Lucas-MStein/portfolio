@@ -1,6 +1,22 @@
 // src/app/projects/page.tsx
 import Link from 'next/link';
 import { Globe, Rocket, Sparkles, ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Projekte',
+    description:
+        'Auswahl an Webprojekten von Lucas-Maurice Stein – moderne, performante Lösungen für verschiedenste Kunden.',
+    alternates: { canonical: '/projects' },
+    openGraph: {
+        url: '/projects',
+        type: 'website',
+        title: 'Projekte – Lucas-Maurice Stein',
+        description:
+            'Moderne Weblösungen und kreative Projekte – ein Auszug meiner Arbeit.',
+        images: ['/og.png'],
+    },
+}
 
 type Project = {
     title: string;

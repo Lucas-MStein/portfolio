@@ -1,6 +1,22 @@
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Über mich',
+    description:
+        'Erfahren Sie mehr über Lucas-Maurice Stein, Webentwickler aus Calw. Von der ersten Idee bis zum Go-Live begleite ich Projekte mit Fokus auf Performance und Design.',
+    alternates: { canonical: '/about' },
+    openGraph: {
+        url: '/about',
+        type: 'profile',
+        title: 'Über Lucas-Maurice Stein',
+        description:
+            'Webentwickler aus Calw mit Fokus auf maßgeschneiderte, performante Websites.',
+        images: ['/og.png'],
+    },
+}
 
 export default function AboutPage() {
     return (
