@@ -30,9 +30,8 @@ export function generateStaticParams() {
     return articles.map((a) => ({ slug: a.slug }));
 }
 
-// (optional) SEO-Metadaten – gleiche Promise-Signatur für params
-// import type { Metadata } from 'next';
-/*
+import type { Metadata } from 'next';
+
 export async function generateMetadata({
   params,
 }: {
@@ -47,4 +46,3 @@ export async function generateMetadata({
     openGraph: { title: article.title, description: article.description, type: 'article' },
   };
 }
-*/
