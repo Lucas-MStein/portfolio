@@ -2,6 +2,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
+import Script from 'next/script'
+
+// Google Analytics ID aus ENV
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://webdesignbystein.de'),
@@ -14,7 +18,7 @@ export const metadata: Metadata = {
     alternates: { canonical: '/' },
     openGraph: {
         type: 'website',
-        url: 'https://webdesignbystein',
+        url: 'https://webdesignbystein.de',
         siteName: 'Lucas-Maurice Stein',
         title: 'Lucas-Maurice Stein – Webentwickler aus Calw',
         description:
@@ -23,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        creator: '@lucasballout', // optional: anpassen/entfernen
+        creator: '@lucasballout',
         images: ['/og.png'],
     },
     icons: {
@@ -38,8 +42,25 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        // Dark Mode dauerhaft erzwingen
         <html lang="de" className="dark" suppressHydrationWarning>
+        {/* Google Analytics (nur wenn GA_ID vorhanden) */}
+        {GA_ID && (
+            <>
+                <Script
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                    strategy="afterInteractive"
+                />
+                <Script id="ga-init" strategy="afterInteractive">
+                    {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { anonymize_ip: true });
+            `}
+                </Script>
+            </>
+        )}
+
         <body>
         <Header />
         <div className="pt-32">{children}</div>
