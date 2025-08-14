@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Script from 'next/script'
 
-// Google Analytics ID aus ENV
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
         title: 'Lucas-Maurice Stein – Webentwickler aus Calw',
         description:
             'Projekte, Leistungen und Artikel – gebaut mit Next.js & Tailwind.',
-        images: ['/og.png'], // /public/og.png (1200x630)
+        images: ['/og.png'],
     },
     twitter: {
         card: 'summary_large_image',
@@ -36,31 +35,28 @@ export const metadata: Metadata = {
     },
 }
 
-export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="de" className="dark" suppressHydrationWarning>
-        {/* Google Analytics (nur wenn GA_ID vorhanden) */}
-        {GA_ID && (
-            <>
-                <Script
-                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-                    strategy="afterInteractive"
-                />
-                <Script id="ga-init" strategy="afterInteractive">
-                    {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { anonymize_ip: true });
-            `}
-                </Script>
-            </>
-        )}
-
+        <head>
+            {GA_ID && (
+                <>
+                    {/* gtag.js im Head laden */}
+                    <Script
+                        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                        strategy="beforeInteractive"
+                    />
+                    <Script id="ga-init" strategy="beforeInteractive">
+                        {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { anonymize_ip: true });
+              `}
+                    </Script>
+                </>
+            )}
+        </head>
         <body>
         <Header />
         <div className="pt-32">{children}</div>
