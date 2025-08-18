@@ -44,7 +44,7 @@ const projects: Project[] = [
     {
         title: 'Leo aus Berlin',
         description: 'Seite für einen Influencer.',
-        href: 'https://lucas-mstein.github.io/freshprinceofberlin/',
+        href: 'https://freshprinceofberlin.com/',
         hrefLabel: 'freshprinceofberlin.com',
         Icon: Sparkles,
     },
