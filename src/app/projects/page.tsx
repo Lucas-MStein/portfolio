@@ -37,7 +37,7 @@ const projects: Project[] = [
     {
         title: 'TSV Calw Basketball',
         description: 'Die offizielle Seite des TSV Calw Basketball.',
-        href: 'https://lucas-mstein.github.io/lionsbasketball/',
+        href: 'https://lionsbasketball.vercel.app/',
         hrefLabel: 'lionsbasketball.de',
         Icon: Globe,
     },
