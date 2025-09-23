@@ -35,10 +35,10 @@ const projects: Project[] = [
         Icon: Rocket,
     },
     {
-        title: 'TSV Calw Basketball',
-        description: 'Die offizielle Seite des TSV Calw Basketball.',
-        href: 'https://lionsbasketball.vercel.app/',
-        hrefLabel: 'lionsbasketball.de',
+        title: 'swish41',
+        description: 'Ich mache auch Musik!',
+        href: 'https://swish-41.de',
+        hrefLabel: 'swish-41.de',
         Icon: Globe,
     },
     {
