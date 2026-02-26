@@ -42,10 +42,10 @@ const projects: Project[] = [
         Icon: Globe,
     },
     {
-        title: 'Leo aus Berlin',
+        title: 'Luca Tenner',
         description: 'Seite für einen Influencer.',
-        href: 'https://freshprinceofberlin.com/',
-        hrefLabel: 'freshprinceofberlin.com',
+        href: 'https://lute08.de',
+        hrefLabel: 'lute08.de',
         Icon: Sparkles,
     },
 ];
