@@ -10,6 +10,7 @@ export default function Header() {
     const pathname = usePathname();
 
     const navItems = [
+        { name: 'Start', href: '/#top' }, // 👈 NEU
         { name: 'Über', href: '/about' },
         { name: 'Projekte', href: '/projects' },
         { name: 'Leistungen', href: '/services' },
@@ -20,7 +21,11 @@ export default function Header() {
         <header className="fixed top-6 inset-x-0 z-50 flex justify-center">
             <nav className="flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/75 px-2 py-2 text-sm shadow-lg backdrop-blur-md">
                 {navItems.map((item) => {
-                    const isActive = pathname === item.href;
+                    const isActive =
+                        item.href === '/'
+                            ? pathname === '/'
+                            : pathname === item.href || pathname.startsWith(item.href + '/');
+
                     const isHovered = hovered === item.href;
 
                     return (
@@ -49,7 +54,12 @@ export default function Header() {
                                 <motion.span
                                     layoutId="nav-pill-active"
                                     className="absolute inset-0 rounded-full bg-zinc-800"
-                                    transition={{ type: 'spring', stiffness: 500, damping: 40, mass: 0.5 }}
+                                    transition={{
+                                        type: 'spring',
+                                        stiffness: 500,
+                                        damping: 40,
+                                        mass: 0.5,
+                                    }}
                                 />
                             )}
 

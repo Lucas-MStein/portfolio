@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
     return (
         <main className="bg-black text-white min-h-screen py-20">
+            <div id="top" />
             {/* Master Container (einheitlich für alles) */}
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-20">
                 <Hero />
